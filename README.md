@@ -1,4 +1,4 @@
-# rmc-date-picker
+# rmc-date-picker-fixedminute
 ---
 
 React Mobile DatePicker Component (web and react-native)
@@ -134,3 +134,6 @@ open coverage/ dir
 ## License
 
 rmc-date-picker is released under the MIT license.
+
+## fix
+fork自rmc-date-picker，当minuteStep设置为大于等于60小于等于0时，就不显示分钟列，并且时间列显示为8:00这种形式

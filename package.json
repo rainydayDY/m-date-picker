@@ -1,20 +1,20 @@
 {
-  "name": "rmc-date-picker",
-  "version": "6.0.9",
-  "description": "React Mobile DatePicker Component for web and react-native",
+  "name": "rmc-date-picker-fixminiute",
+  "version": "1.0.2",
+  "description": "React Mobile DatePicker Component for web and react-native，fix miniuteStep illegal problem",
   "keywords": [
     "react",
     "react-component",
     "react-mobile-date-picker",
     "date-picker"
   ],
-  "homepage": "https://github.com/react-component/m-date-picker",
+  "homepage": "https://github.com/rainydayDY/m-date-picker",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-component/m-date-picker.git"
+    "url": "https://github.com/rainydayDY/m-date-picker.git"
   },
   "bugs": {
-    "url": "https://github.com/react-component/m-date-picker/issues"
+    "url": "https://github.com/rainydayDY/m-date-picker/issues"
   },
   "files": [
     "lib",

@@ -359,22 +359,24 @@ class DatePicker extends React.Component<IDatePickerProps, any> {
 
     const minutes: any[] = [];
     const selMinute = date.getMinutes();
-    for (let i = minMinute; i <= maxMinute; i += minuteStep!) {
-      minutes.push({
-        value: i + '',
-        label: locale.minute ? i + locale.minute + '' : pad(i),
-      });
-      if (selMinute > i && selMinute < i + minuteStep!) {
+    const minutesLegal = minuteStep > 0 && minuteStep < 60;
+    if (minutesLegal) {
+      for (let i = minMinute; i <= maxMinute; i += minuteStep!) {
         minutes.push({
-          value: selMinute + '',
-          label: locale.minute ? selMinute + locale.minute + '' : pad(selMinute),
+          value: i + '',
+          label: locale.minute ? i + locale.minute + '' : pad(i),
         });
+        if (selMinute > i && selMinute < i + minuteStep!) {
+          minutes.push({
+            value: selMinute + '',
+            label: locale.minute ? selMinute + locale.minute + '' : pad(selMinute),
+          });
+        }
       }
     }
     const cols = [
       { key: 'hours', props: { children: hours } },
-      { key: 'minutes', props: { children: minutes } },
-    ].concat(use12Hours ? [{
+    ].concat(minutesLegal ? { key: 'minutes', props: { children: minutes } } : [],  use12Hours ? [{
       key: 'ampm',
       props: { children: [{ value: '0', label: locale.am }, { value: '1', label: locale.pm }] },
     }] : []);
